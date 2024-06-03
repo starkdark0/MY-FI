@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY FI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- صفحة الترحيب -->
+        <div id="welcome-page" class="page active">
+            <h1>Welcome to MY FI</h1>
+            <p>Your personal family internet manager</p>
+            <button id="enter-app"><i class="fas fa-arrow-right"></i> Enter</button>
+        </div>
+
+        <!-- صفحة تسجيل الدخول -->
+        <div id="login-page" class="page">
+            <form id="login-form" class="form">
+                <input type="text" id="login-mobile" placeholder="Mobile" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit"><i class="fas fa-sign-in-alt"></i> Login</button>
+            </form>
+            <p><button id="show-register"><i class="fas fa-user-plus"></i> Register</button></p>
+        </div>
+
+        <!-- صفحة التسجيل -->
+        <div id="register-page" class="page">
+            <form id="register-form" class="form">
+                <input type="text" id="register-mobile" placeholder="Mobile" required pattern="\d{11}">
+                <input type="password" id="register-password" placeholder="Password" required>
+                <button type="submit"><i class="fas fa-user-check"></i> Register</button>
+            </form>
+            <p><button id="show-login"><i class="fas fa-sign-in-alt"></i> Login</button></p>
+        </div>
+
+        <!-- صفحة الرئيسية -->
+        <div id="home-page" class="page">
+            <h2 id="welcome-message"></h2>
+            <ul id="user-list"></ul>
+            <button id="select-package-button"><i class="fas fa-box-open"></i> Select Family Package</button>
+            <button id="manage-users-button"><i class="fas fa-users-cog"></i> Manage Users</button>
+            <button id="logout-button"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+
+        <!-- صفحة إدارة الأعضاء -->
+        <div id="manage-users-page" class="page">
+            <form id="add-user-form" class="form">
+                <input type="text" id="add-user-mobile" placeholder="Mobile" required pattern="\d{11}">
+                <input type="password" id="add-user-password" placeholder="Password" required>
+                <input type="number" id="add-user-limit" placeholder="Monthly Limit (GB)" required>
+                <button type="submit"><i class="fas fa-user-plus"></i> Add User</button>
+            </form>
+            <ul id="manage-user-list"></ul>
+            <button id="back-to-home-button"><i class="fas fa-arrow-left"></i> Back to Home</button>
+        </div>
+
+        <!-- صفحة اختيار الباقة -->
+        <div id="select-package-page" class="page">
+            <h2>Select Family Package</h2>
+            <select id="select-family-package">
+                <option value="140">140 GB</option>
+                <option value="200">200 GB</option>
+                <option value="250">250 GB</option>
+                <option value="400">400 GB</option>
+                <option value="600">600 GB</option>
+                <option value="1000">1000 GB</option>
+            </select>
+            <button id="confirm-package-button"><i class="fas fa-check"></i> Confirm Package</button>
+            <button id="back-to-home-button-from-package"><i class="fas fa-arrow-left"></i> Back to Home</button>
+        </div>
+
+        <!-- صفحة المستخدم -->
+        <div id="user-home-page" class="page">
+            <h2 id="user-welcome-message"></h2>
+            <p id="user-usage-message"></p>
+            <button id="logout-button-user"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+        
+        <button id="change-language"><i class="fas fa-language"></i> عربي</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
